@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
+import Register from './views/user/register';
 
 class App extends Component {
   name = 'Foodie';
