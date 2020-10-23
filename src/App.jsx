@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { Component } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import Register from "./views/user/Register";
-import Login from "./views/user/Login";
-import { Home } from './views/Home';
+import Register from "./views/user/Register.jsx";
+import Login from "./views/user/Login.jsx";
+import { Home } from './views/Home.jsx';
 
 class App extends Component {
   render() {
@@ -14,7 +14,6 @@ class App extends Component {
             <Route path="/signin" component={Login} />
             <Route path="/signup" component={Register} />
             <Route path="/" component={Home} />
-
           </Switch>
         </BrowserRouter>
       </div>
