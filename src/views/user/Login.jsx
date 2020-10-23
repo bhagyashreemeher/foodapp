@@ -14,7 +14,7 @@ export default class Login extends Component {
         <p className="sign" align="center">
           Sign in
         </p>
-        <Form className="login  ">
+        <Form className="login">
           <Form.Control
             className="un"
             type="text"
