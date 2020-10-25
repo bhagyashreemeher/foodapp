@@ -37,7 +37,26 @@ const Register = (props) => {
             </small>
           </div>
         </div>
-        
+        <div className="form-group row">
+          <div className="col-sm-12">
+            <input type="email" name="email" className={errors.email ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })}  id="inputEmail" placeholder="Email" />
+          </div>
+          <div className="col-sm-12">
+            <small id="email-help" className="text-danger">
+              {errors.email && "Email is required"}
+            </small>
+          </div>
+        </div>
+        <div className="form-group row">
+          <div className="col-sm-12">
+            <input type="text" name="age" className={errors.age ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })}  id="inputEmail" placeholder="Age" />
+          </div>
+          <div className="col-sm-12">
+            <small id="age-help" className="text-danger">
+              {errors.age && "Your age is required"}
+            </small>
+          </div>
+        </div>
         <div className="form-group row">
           <div className="col-sm-12">
             <input type="text" name="country" className={errors.country ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })}  id="inputEmail" placeholder="Country" />
