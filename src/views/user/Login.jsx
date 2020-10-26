@@ -1,7 +1,5 @@
 import React from "react";
 import { useForm } from 'react-hook-form';
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
 
 const Login = (props) => {
   const { register, handleSubmit, errors } = useForm();
