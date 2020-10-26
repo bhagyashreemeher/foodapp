@@ -1,57 +1,49 @@
-import React, { Component } from "react";
+import React from "react";
+import { useForm } from 'react-hook-form';
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-export default class Login extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
+const Login = (props) => {
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = data => console.log(data);
 
-  render() {
-    return (
-      <div className="container">
-        <p className="sign" align="center">
-          Sign in
+  return (
+    <div className="container">
+      <p className="sign" align="center">
+        Login
         </p>
-        <Form className="login">
-          <Form.Control
-            className="un"
-            type="text"
-            align="center"
-            placeholder="Username"
-          />
-          <Form.Control
-            className="pass"
-            type="password"
-            align="center"
-            placeholder="Password"
-          />
-          <div  className="row justify-content-center">
-            <Button
-              className="submit col-md-3"
-              onClick={(event) => {
-                event.preventDefault();
-                this.props.history.push("/signup");
-              }}
-              align="center"
-            >
-              Register
-            </Button>
-            <Button
-              className="submit col-md-3"
-              align="center"
-              onClick={(event) => {
-                event.preventDefault();
-                console.log("hello");
-              }}s
-            >
-              Signin
-            </Button>
+      <form className="login" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-group row">
+          <div className="col-sm-12">
+            <input type="email" name="email" className={errors.email ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Email" />
           </div>
-          {/* <p class="forgot" align="center"><a href="#">Forgot Password?</p> */}
-        </Form>
-      </div>
-    );
-  }
+          <div className="col-sm-12">
+            <small id="email-help" className="text-danger">
+              {errors.email && "Email is required"}
+            </small>
+          </div>
+        </div>
+        <div className="form-group row">
+          <div className="col-sm-12">
+            <input type="password" name="password" ref={register({ required: true, maxLength: 80 })} className={errors.password ? 'form-control is-invalid' : 'form-control is-valid'} id="inputEmail" placeholder="Password" />
+          </div>
+          <div className="col-sm-12">
+            <small id="password-help" className="text-danger">
+              {errors.password && "Password is required"}
+            </small>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <input
+            type="submit"
+            className="submit col-md-6"
+            // onClick={() => props.history.push("/signup")}
+            align="center"
+          />
+        </div>
+      </form>
+    </div>
+  );
 }
+
+export default Login;
