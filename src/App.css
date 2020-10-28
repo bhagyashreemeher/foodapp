@@ -101,6 +101,9 @@ a {
   text-decoration: none;
 }
 
+.form-control.is-valid{
+  border-color: #8c55aa;
+}
 /* input[type="button"]{
   outline:0 !important;
   box-shadow: none !important;
