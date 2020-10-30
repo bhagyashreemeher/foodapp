@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 
 const Register = (props) => {
-  
+
   const { register, handleSubmit, errors, watch } = useForm();
 
   const onSubmit = data => {
@@ -21,60 +21,40 @@ const Register = (props) => {
             {errors.name && "Your name is required"}
           </small>
         </div>
-        <div className="form-group row">
-          <div className="col-sm-12">
-            <input type="password" name="password" ref={register({ required: true, maxLength: 80 })} className={errors.password ? 'form-control is-invalid' : 'form-control is-valid'} id="inputEmail" placeholder="Password" />
-          </div>
-          <div className="col-sm-12">
-            <small id="password-help" className="text-danger">
-              {errors.password && "Password is required"}
-            </small>
-          </div>
+        <div className="form-group">
+          <input type="password" name="password" ref={register({ required: true, maxLength: 80 })} className={errors.password ? 'form-control is-invalid' : 'form-control is-valid'} id="inputEmail" placeholder="Password" />
+          <small id="password-help" className="text-danger">
+            {errors.password && "Password is required"}
+          </small>
         </div>
-        <div className="form-group row">
-          <div className="col-sm-12">
-            <input type="password" className={errors.confirmPassword ? 'form-control is-invalid' : 'form-control is-valid'} name="confirmPassword" ref={register({ required: true, maxLength: 80, validate: (value) => value === watch('password') })} id="inputEmail" placeholder="Confirm Password" />
-          </div>
-          <div className="col-sm-12">
-            <small id="password-help" className="text-danger">
-              {errors.confirmPassword && "Password is required"}
-            </small>
-          </div>
+        <div className="form-group">
+          <input type="password" className={errors.confirmPassword ? 'form-control is-invalid' : 'form-control is-valid'} name="confirmPassword" ref={register({ required: true, maxLength: 80, validate: (value) => value === watch('password') })} id="inputEmail" placeholder="Confirm Password" />
+          <small id="password-help" className="text-danger">
+            {errors.confirmPassword && "Password is required"}
+          </small>
         </div>
-        <div className="form-group row">
-          <div className="col-sm-12">
-            <input type="email" name="email" className={errors.email ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Email" />
-          </div>
-          <div className="col-sm-12">
-            <small id="email-help" className="text-danger">
-              {errors.email && "Email is required"}
-            </small>
-          </div>
+        <div className="form-group">
+          <input type="email" name="email" className={errors.email ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Email" />
+          <small id="email-help" className="text-danger">
+            {errors.email && "Email is required"}
+          </small>
         </div>
-        <div className="form-group row">
-          <div className="col-sm-12">
-            <input type="text" name="age" className={errors.age ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Age" />
-          </div>
-          <div className="col-sm-12">
-            <small id="age-help" className="text-danger">
-              {errors.age && "Your age is required"}
-            </small>
-          </div>
+        <div className="form-group">
+          <input type="text" name="age" className={errors.age ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Age" />
+          <small id="age-help" className="text-danger">
+            {errors.age && "Your age is required"}
+          </small>
         </div>
-        <div className="form-group row">
-          <div className="col-sm-12">
-            <input type="text" name="country" className={errors.country ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Country" />
-          </div>
-          <div className="col-sm-12">
-            <small id="country-help" className="text-danger">
-              {errors.country && "Your country is required"}
-            </small>
-          </div>
+        <div className="form-group">
+          <input type="text" name="country" className={errors.country ? 'form-control is-invalid' : 'form-control is-valid'} ref={register({ required: true, maxLength: 80 })} id="inputEmail" placeholder="Country" />
+          <small id="country-help" className="text-danger">
+            {errors.country && "Your country is required"}
+          </small>
         </div>
         <div className="row justify-content-center">
           <input
             type="submit"
-            className="submit col-md-6"
+            className="submit col-sm-6"
             align="center"
           />
         </div>
