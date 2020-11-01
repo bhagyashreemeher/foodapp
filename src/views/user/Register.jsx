@@ -8,8 +8,11 @@ const Register = (props) => {
   const history = useHistory();
   const { register, handleSubmit, errors, watch } = useForm();
 
-  const onSubmit = data => {
-    console.log(data)
+  const onSubmit = async data => {
+    const response = await Axios.post(`${API_URL}/profiles/signup`, data);
+    if (response.data && response.data.data) {
+      history.push('/');
+    }
   };
 
   return (
