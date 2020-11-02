@@ -10,6 +10,7 @@ const Login = (props) => {
   const onSubmit = async data => {
     const response = await Axios.post(`${API_URL}/profiles/signin`, data);
     if (response.data && response.data.data) {
+      localStorage.setItem('jwt', response.data.jtoken);
       history.push('/');
     }
   };
