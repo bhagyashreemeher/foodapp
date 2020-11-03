@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { Axios, API_URL } from '../../constant';
 import { useHistory } from "react-router-dom";
+import './user.css';
 
 const Login = (props) => {
   const { register, handleSubmit, errors } = useForm();
