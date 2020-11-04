@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { Axios, API_URL } from './../../constant';
 import { useHistory } from 'react-router-dom';
+import './user.css';
 
 const Register = (props) => {
 
@@ -62,6 +63,17 @@ const Register = (props) => {
             {errors.country && "Your country is required"}
           </small>
         </div>
+        <div className="form-group">
+          <div className="btn-group btn-group-toggle" data-toggle="buttons">
+            <label className="btn btn-secondary">
+              <input type="radio" name="Male" value="Male" id="option1" ref={register({ required: true })} />Male
+            </label>
+            <label className="btn btn-secondary active">
+              <input type="radio" name="Female" value="Female" id="option2" ref={register({ required: true })} defaultChecked={true} />Female
+            </label>
+          </div>          
+        </div>
+
         <div className="row justify-content-center">
           <input
             type="submit"
