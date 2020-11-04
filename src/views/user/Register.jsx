@@ -71,7 +71,10 @@ const Register = (props) => {
             <label className="btn btn-secondary active">
               <input type="radio" name="Female" value="Female" id="option2" ref={register({ required: true })} defaultChecked={true} />Female
             </label>
-          </div>          
+          </div>
+          <small id="gender-help" className="text-danger">
+            {(errors.Male || errors.Female) && "Your gender is required"}
+          </small>
         </div>
 
         <div className="row justify-content-center">
