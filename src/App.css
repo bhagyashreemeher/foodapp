@@ -29,3 +29,12 @@ a {
 .navbar {
   color: white;
 }
+
+.nav {
+  background: white;
+  border-radius: 5px;
+}
+
+.card{
+  border-radius: 5px;
+}
