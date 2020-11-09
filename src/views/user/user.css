@@ -25,6 +25,7 @@
 
 .form-control.is-valid {
   border-color: #8c55aa;
+  background-image:none;
 }
 
 .container {
