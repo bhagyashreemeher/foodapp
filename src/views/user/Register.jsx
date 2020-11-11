@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
 import { Axios, API_URL } from './../../constant';
 import { useHistory } from 'react-router-dom';
@@ -8,8 +8,10 @@ const Register = (props) => {
 
   const history = useHistory();
   const { register, handleSubmit, errors, watch } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async data => {
+    setIsLoading(true);
     const response = await Axios.post(`${API_URL}/profiles/signup`, data);
     if (response.data && response.data.data) {
       history.push('/');
@@ -64,25 +66,21 @@ const Register = (props) => {
           </small>
         </div>
         <div className="form-group">
-          <div className="btn-group btn-group-toggle" data-toggle="buttons">
-            <label className="btn btn-secondary">
-              <input type="radio" name="Male" value="Male" id="option1" ref={register({ required: true })} />Male
-            </label>
-            <label className="btn btn-secondary active">
-              <input type="radio" name="Female" value="Female" id="option2" ref={register({ required: true })} defaultChecked={true} />Female
-            </label>
-          </div>
+          <select className={errors.gender ? 'form-control is-invalid' : 'form-control is-valid'} name="gender" ref={register({ required: true })}>
+            <option value="" defaultChecked></option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
           <small id="gender-help" className="text-danger">
-            {(errors.Male || errors.Female) && "Your gender is required"}
+            {(errors.gender) && "Your gender is required"}
           </small>
         </div>
 
         <div className="row justify-content-center">
-          <input
-            type="submit"
-            className="submit col-sm-6"
-            align="center"
-          />
+          <button class="btn btn-primary submit col-md-6" type="submit">
+            {isLoading === true ? 'Signing in...' : 'Submit'}
+          </button>
         </div>
       </form>
     </div>
