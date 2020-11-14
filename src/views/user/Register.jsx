@@ -78,7 +78,7 @@ const Register = (props) => {
         </div>
 
         <div className="row justify-content-center">
-          <button class="btn btn-primary submit col-md-6" type="submit">
+          <button className="btn btn-primary submit col-md-6" type="submit">
             {isLoading === true ? 'Signing in...' : 'Submit'}
           </button>
         </div>
