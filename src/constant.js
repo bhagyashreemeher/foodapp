@@ -23,5 +23,16 @@ export const isAuthenticated = () =>{
         return true;
     }
     return false;
+}
 
+export const Profile = () =>{
+    const token = localStorage.getItem('jwt');
+    if(token){
+        const user = jwt(token);
+        if(user && new Date(Date.now())>=new Date(user.exp*1000)){
+            return user;
+        }
+        return user;
+    }
+    return null;
 }
