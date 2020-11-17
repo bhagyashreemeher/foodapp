@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
-import { Axios, API_URL } from './../../constant';
+import { Axios, API_URL } from '../../constant';
 import { useHistory } from 'react-router-dom';
-import './user.css';
+import './User.css';
 
 const Register = (props) => {
 
@@ -79,7 +79,7 @@ const Register = (props) => {
 
         <div className="row justify-content-center">
           <button className="btn btn-primary submit col-md-6" type="submit">
-            {isLoading === true ? 'Signing in...' : 'Submit'}
+            {isLoading === true ? 'Signing in...' : 'Sign in'}
           </button>
         </div>
       </form>
