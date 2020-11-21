@@ -34,5 +34,5 @@ export const Profile = () =>{
         }
         return user;
     }
-    return null;
+    return {};
 }
