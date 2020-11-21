@@ -33,18 +33,18 @@ export const Articles = (props) => {
                     <div className="card-deck">
                         {
                             articles.map((article) =>
-                                <Link to={`/articles/${article._id}`} key={article._id} style={{ textDecoration: "none" }}>
-                                    <div className="card border-light text-white bg-primary">
-                                        {/* <img src="..." className="card-img-top" alt="..." /> */}
-                                        <div className="card-body shadow-lg">
-                                            <h5 className="card-title">{article.name}</h5>
-                                            <p className="card-text">{article.description}</p>
+                                    <Link to={`/articles/${article._id}`} key={article._id} style={{ textDecoration: "none" }}>
+                                        <div className="card mb-4 border-light text-white bg-primary">
+                                            {/* <img src="..." className="card-img-top" alt="..." /> */}
+                                            <div className="card-body shadow-lg">
+                                                <h5 className="card-title">{article.name}</h5>
+                                                <p className="card-text">{article.description}</p>
+                                            </div>
+                                            <div className="card-footer bg-info text-right">
+                                                <p className="card-text"><small className="text-white">Last updated <TimeAgo date={article.updatedAt} /></small></p>
+                                            </div>
                                         </div>
-                                        <div className="card-footer bg-info text-right">
-                                            <p className="card-text"><small className="text-white">Last updated <TimeAgo date={article.updatedAt} /></small></p>
-                                        </div>
-                                    </div>
-                                </Link>
+                                    </Link>
                             )
                         }
                     </div>
